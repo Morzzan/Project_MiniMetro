@@ -2,18 +2,20 @@ package game_machine;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Observable;
 
 import math.geom2d.Vector2D;
 
-public class GameMap {
+public class GameMap extends Observable{
 	private List<Station> stations = new LinkedList<Station>();
 	private List<Lane> lanes = new ArrayList<Lane>();
 	private int points=0;
+	private boolean change=false;
 	
 	
 	public GameMap(){
 		for (int i =0;i<3;i++){
-			lanes.add(new Lane());
+			lanes.add(new Lane(this));
 		}
 		stations.add(new Station(Shape.Triangle, new Vector2D(0, 0)));
 		stations.add(new Station(Shape.Square, new Vector2D(0, 10)));
@@ -21,6 +23,11 @@ public class GameMap {
 	}
 	public void scorePoint(){
 		points++;
+	}
+	
+	public void networkChange(){
+		this.setChanged();
+		notifyObservers();
 	}
 
 	public List<Station> getStations() {
@@ -30,11 +37,6 @@ public class GameMap {
 		return points;
 	}
 
-	public void setStations(List<Station> stations) {
-		this.stations = stations;
-	}
-
-
 	public List<Lane> getLanes() {
 		return lanes;
 	}
@@ -42,9 +44,5 @@ public class GameMap {
 	public Lane getLane(int index){
 		return lanes.get(index);
 	}
-
-
-	public void setLanes(List<Lane> lanes) {
-		this.lanes = lanes;
-	}
+	
 }

@@ -1,4 +1,5 @@
 package game_machine;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import math.geom2d.*;
 import java.util.List;
@@ -9,8 +10,15 @@ public class Station{
 	private Shape type;
 	private Vector2D pos;
 	private List<Traveler> waiters = new LinkedList<Traveler>();
+	private List<Platform> platforms = new ArrayList<Platform>();
 	
-	
+	public Platform getPlatform(Lane l){
+		Platform plat=null;
+		for(Platform p : platforms){
+			if(p.getOfLane()==l)plat=p;
+		}
+		return plat;
+	}
 	public Station(Shape type,Vector2D pos){
 		this.type=type;
 		this.pos=pos;
@@ -48,6 +56,12 @@ public class Station{
 	}
 	public void haveWait(Traveler t){
 		waiters.add(t);
-		t.findRoute(this);
+		t.setDest(this);
+		t.findRoute();
+	}
+	public Platform createPlatform(Lane lane) {
+		Platform p=new Platform(this,lane);	
+		platforms.add(p);
+		return p;
 	}
 }

@@ -1,46 +1,45 @@
 package game_machine;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Lane{
+	private GameMap on;
 	private List<Train> trains = new ArrayList<Train>();
-	private List<Station> stations = new ArrayList<Station>();
-	private boolean circular=true;
-
+	private Station first, last;
+	private int stationNumber=0;
+	
+	public float quality(){
+		return trains.size()/stationNumber;
+	}
+	private void extend(Station from, Station to){
+		Platform platFrom=from.getPlatform(this) , platTo=to.getPlatform(this);
+		if(platFrom==null)platFrom=from.createPlatform(this);
+		if(platTo==null)platTo=to.createPlatform(this);
+		Section s=new Section(platFrom, platTo);
+		platFrom.setTo(s);
+		platTo.setFrom(s);
+		stationNumber++;
+	}
+	public Station getFirst() {
+		return first;
+	}
+	public GameMap getOn() {
+		return on;
+	}
+	public void extendHead(Station s){
+		extend(s,first);
+		first=s;
+	}
+	public void extendTail(Station s){
+		extend(last,s);
+		last=s;
+	}
+	
+	public Lane(GameMap on){
+		
+	}
 	public List<Train> getTrains() {
 		return trains;
-	}
-	public void setTrains(List<Train> trains) {
-		this.trains = trains;
-	}
-	public List<Station> getStations() {
-		return stations;
-	}
-	public void setStations(List<Station> stations) {
-		this.stations = stations;
-	}
-	public void addStation(Station toAdd,int index){
-		stations.add(index, toAdd);
-	}
-	public void addStation(Station toAdd){
-		addStation(toAdd, 0);
-	}
-	public Station nextStation(Station from,boolean way){
-		Station next=null;
-		int w=way ? 1 :-1;
-		int index =stations.lastIndexOf(from);
-		if(index!=-1){
-			index+=w;
-			int fin=stations.size()-1;
-			if(index>=0&&index<=fin){
-				next=stations.get(index);
-			}
-			else if(circular){
-				if(index>fin)index=0;
-				else index=fin;
-				next=stations.get(index);
-			}
-		}		
-		return next;
 	}
 }
