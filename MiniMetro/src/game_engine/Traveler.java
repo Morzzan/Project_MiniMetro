@@ -53,7 +53,7 @@ public class Traveler implements Observer {
 
 	public void findRoute() {
 		routes.clear();
-		digRoute(dest, null, null, MAX_HOPS, 0);
+		digRoute(dest, null, null, null, MAX_HOPS, 0);
 		float minSpeed;
 		if (!routes.isEmpty()) {
 			minSpeed = routes.get(0).speed;
@@ -64,41 +64,43 @@ public class Traveler implements Observer {
 			List<Route> temp = routes;
 			routes = new LinkedList<Route>();
 			for (Route r : temp) {
-
 				if (r.speed <= acceptable) {
 					routes.add(r);
-					System.out.println(r.speed);
+					System.out.println(r.speed + " to " + type);
 				}
 			}
 		}
 	}
 
-	private void digRoute(Station from, Section origin, Section bySection, int hops, float speed) {
+	private void digRoute(Station from, Platform firstDest, Section origin, Section bySection, int hops, float speed) {
 		for (Platform p : from.getPlatforms()) {
 			if (p.getFrom() != bySection && p.getTo() != bySection && bySection != null) {
 				speed += TRAIN_CHANGE;
 			}
 			if (p.getFrom() != bySection && p.getFrom() != null) {
-				exploreThisSection(p, origin, p.getFrom(), hops, speed);
+				exploreThisSection(p, firstDest, origin, p.getFrom(), hops, speed);
 			}
 			if (p.getTo() != bySection && p.getTo() != null) {
-				exploreThisSection(p, origin, p.getTo(), hops, speed);
+				exploreThisSection(p, firstDest, origin, p.getTo(), hops, speed);
 			}
 		}
 	}
 
-	private void exploreThisSection(Platform from, Section origin, Section bySection, int hops, float speed) {
+	private void exploreThisSection(Platform from, Platform dest, Section origin, Section bySection, int hops,
+			float speed) {
 		Platform platNext = from.nextStationBy(bySection);
 		Station stationNext = platNext.getOfStation();
 		if (origin == null)
 			origin = bySection;
+		if (dest == null || platNext.getOfLane() == dest.getOfLane())
+			dest = platNext;
 		hops--;
 		speed += bySection.weightedLength();
 		if (stationNext.getType() == type) {
-			routes.add(new Route(stationNext, origin, speed));
+			routes.add(new Route(dest.getOfStation(), origin, speed));
 		} else {
 			if (hops > 0) {
-				digRoute(stationNext, origin, bySection, hops, speed);
+				digRoute(stationNext, dest, origin, bySection, hops, speed);
 			}
 		}
 	}
@@ -114,7 +116,8 @@ public class Traveler implements Observer {
 			if (dest.getType() == type) {
 				on.scorePoint();
 				delete();
-				System.out.println("Traveler type " + type + " arrived at " + s.getType());
+				System.out
+						.println("Traveler type " + type + " arrived at " + s.getType() + " Points : " + on.getScore());
 			} else
 				s.haveWait(this);
 		}
