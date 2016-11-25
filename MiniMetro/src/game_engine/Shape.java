@@ -1,4 +1,4 @@
-package game_machine;
+package game_engine;
 
 public enum Shape {
 	Triangle,

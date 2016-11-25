@@ -1,4 +1,4 @@
-package game_machine;
+package game_engine;
 import java.util.Observable;
 import java.util.Timer;
 import java.util.TimerTask;
