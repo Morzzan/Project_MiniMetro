@@ -9,8 +9,25 @@ public class Lane {
 	private Station first, last;
 	private int stationNumber = 0;
 
-	public float quality() {
-		return stationNumber / trains.size();
+	public float quality(boolean onNormalWay) {
+		float q;
+		if (isCircular()) {
+			q = stationNumber / 2 / trainsGoingWay(onNormalWay);
+		} else {
+			q = stationNumber / trains.size();
+		}
+		return q;
+	}
+
+	private float trainsGoingWay(boolean normal) {
+		float nb = 0;
+		for (Train t : trains) {
+			if (t.isGoingNormalWay() == normal)
+				nb++;
+		}
+		if (nb == 0)
+			nb += 0.0000001;
+		return nb;
 	}
 
 	public Station getFirst() {
@@ -34,6 +51,10 @@ public class Lane {
 		stationNumber++;
 		first = s;
 		on.networkChange();
+	}
+
+	public boolean isCircular() {
+		return (first == last);
 	}
 
 	public void extendTail(Station s) {

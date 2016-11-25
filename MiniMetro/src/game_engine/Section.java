@@ -24,7 +24,8 @@ public class Section {
 		length = from.getOfStation().getDistance(to.getOfStation());
 	}
 
-	public double weightedLength() {
-		return length * ofLane.quality();
+	public double weightedLength(Platform next) {
+		boolean onNormalWay = (next == to ? true : false);
+		return length * ofLane.quality(onNormalWay);
 	}
 }

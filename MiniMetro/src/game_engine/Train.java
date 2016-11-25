@@ -28,6 +28,15 @@ public class Train implements Observer {
 		return on;
 	}
 
+	public boolean isGoingNormalWay() {
+		boolean way = false;
+		if (on != null && to != null) {
+			if (on.getTo() == to)
+				way = true;
+		}
+		return way;
+	}
+
 	public boolean fromHeadToTail() {
 		return (on != null && on.getTo() == to);
 	}

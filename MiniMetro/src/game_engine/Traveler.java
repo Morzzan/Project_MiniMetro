@@ -95,7 +95,7 @@ public class Traveler implements Observer {
 		if (dest == null || platNext.getOfLane() == dest.getOfLane())
 			dest = platNext;
 		hops--;
-		speed += bySection.weightedLength();
+		speed += bySection.weightedLength(platNext);
 		if (stationNext.getType() == type) {
 			routes.add(new Route(dest.getOfStation(), origin, speed));
 		} else {
