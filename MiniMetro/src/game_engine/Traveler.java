@@ -9,7 +9,7 @@ public class Traveler implements Observer {
 	private GameMap on;
 	private Shape type;
 	private Station dest;
-	private static final int TRAIN_CHANGE = 40, MAX_HOPS = 20, SPEED_TOLERANCE = 10;
+	private static final int TRAIN_CHANGE = 40, MAX_HOPS = 20, SPEED_TOLERANCE = 20;
 	private List<Route> routes = new LinkedList<Route>();
 
 	private class Route {
@@ -59,6 +59,7 @@ public class Traveler implements Observer {
 			minSpeed = routes.get(0).speed;
 			for (Route r : routes) {
 				minSpeed = Math.min(minSpeed, r.speed);
+				System.out.println(r.speed + " to " + type);
 			}
 			float acceptable = minSpeed * (100 + SPEED_TOLERANCE) / 100;
 			List<Route> temp = routes;
@@ -66,14 +67,16 @@ public class Traveler implements Observer {
 			for (Route r : temp) {
 				if (r.speed <= acceptable) {
 					routes.add(r);
-					System.out.println(r.speed + " to " + type);
+					System.out.println(r.speed + " to " + type + " : acceptable");
 				}
 			}
 		}
 	}
 
-	private void digRoute(Station from, Platform firstDest, Section origin, Section bySection, int hops, float speed) {
+	private void digRoute(Station from, Platform firstDest, Section origin, Section bySection, int hops,
+			float weightedLength) {
 		for (Platform p : from.getPlatforms()) {
+			float speed = weightedLength;
 			if (p.getFrom() != bySection && p.getTo() != bySection && bySection != null) {
 				speed += TRAIN_CHANGE;
 			}

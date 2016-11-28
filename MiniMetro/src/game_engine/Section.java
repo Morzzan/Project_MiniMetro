@@ -22,6 +22,9 @@ public class Section {
 		this.from = from;
 		this.to = to;
 		length = from.getOfStation().getDistance(to.getOfStation());
+		from.setTo(this);
+		;
+		to.setFrom(this);
 	}
 
 	public double weightedLength(Platform next) {

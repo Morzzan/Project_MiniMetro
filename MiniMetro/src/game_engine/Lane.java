@@ -10,13 +10,33 @@ public class Lane {
 	private int stationNumber = 0;
 
 	public float quality(boolean onNormalWay) {
-		float q;
+		float t;
 		if (isCircular()) {
-			q = stationNumber / 2 / trainsGoingWay(onNormalWay);
+			t = trainsGoingWay(onNormalWay) * 2;
 		} else {
-			q = stationNumber / trains.size();
+			t = trains.size();
 		}
-		return q;
+		if (t == 0)
+			t += 0.0000001;
+		return stationNumber / t;
+	}
+
+	public void shorten(Station s) {
+		Platform sPlat = s.getPlatform(this);
+		if (s == first) {
+			Platform firstPlat = sPlat.nextStationBy(sPlat.getTo());
+			first = firstPlat.getOfStation();
+			firstPlat.setFrom(null);
+		} else if (s == last) {
+			Platform lastPlat = sPlat.nextStationBy(sPlat.getFrom());
+			last = lastPlat.getOfStation();
+			lastPlat.setTo(null);
+		} else {
+			Platform f = sPlat.nextStationBy(sPlat.getFrom());
+			Platform t = sPlat.nextStationBy(sPlat.getTo());
+			new Section(f, t, this);
+		}
+		s.getPlatforms().remove(sPlat);
 	}
 
 	private float trainsGoingWay(boolean normal) {
@@ -44,9 +64,7 @@ public class Lane {
 		else {
 			Platform firstest = s.getPlatform(this);
 			Platform firstplat = first.getPlatform(this);
-			Section sec = new Section(firstest, firstplat, this);
-			firstest.setTo(sec);
-			firstplat.setFrom(sec);
+			new Section(firstest, firstplat, this);
 		}
 		stationNumber++;
 		first = s;
@@ -63,9 +81,7 @@ public class Lane {
 		else {
 			Platform latest = s.getPlatform(this);
 			Platform lastplat = last.getPlatform(this);
-			Section sec = new Section(lastplat, latest, this);
-			lastplat.setTo(sec);
-			latest.setFrom(sec);
+			new Section(lastplat, latest, this);
 		}
 		stationNumber++;
 		last = s;
