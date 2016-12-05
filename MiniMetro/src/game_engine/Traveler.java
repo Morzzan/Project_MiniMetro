@@ -7,7 +7,7 @@ import java.util.Observer;
 
 public class Traveler implements Observer {
 	private GameMap on;
-	private Shape type;
+	private MyShape type;
 	private Station dest;
 	private static final int TRAIN_CHANGE = 40, MAX_HOPS = 20, SPEED_TOLERANCE = 20;
 	private List<Route> routes = new LinkedList<Route>();
@@ -24,7 +24,7 @@ public class Traveler implements Observer {
 		}
 	}
 
-	public Traveler(Shape type, Station in, GameMap jeu) {
+	public Traveler(MyShape type, Station in, GameMap jeu) {
 		on = jeu;
 		on.addObserver(this);
 		this.type = type;
@@ -108,7 +108,7 @@ public class Traveler implements Observer {
 		}
 	}
 
-	public Shape getType() {
+	public MyShape getType() {
 		return type;
 	}
 

@@ -14,14 +14,14 @@ public class Launcher {
 		m.getLane(1).extendTail(l.get(2));
 		m.getLane(1).extendTail(l.get(1));
 		Station cir = m.getLane(0).getFirst();
-		// for (int i = 0; i < 10; i++) {
-		// new Traveler(Shape.Square, cir, m);
-		// new Traveler(Shape.Circle, cir, m);
-		// }
-		new Traveler(Shape.Square, cir, m);
+		for (int i = 0; i < 10; i++) {
+			// new Traveler(Shape.Square, cir, m);
+			// new Traveler(Shape.Circle, cir, m);
+		}
+		new Traveler(MyShape.square, cir, m);
 		// new Train(m.getLane(0), cl);
 		// new Train(m.getLane(0),cir , true, cl);
-		new Train(m.getLane(0), cl);
-		new Train(m.getLane(1), cl);
+		// new Train(m.getLane(0), cl);
+		// new Train(m.getLane(1), cl);
 	}
 }

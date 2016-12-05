@@ -1,5 +1,6 @@
 package game_engine;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +9,7 @@ public class Lane {
 	private List<Train> trains = new ArrayList<Train>();
 	private Station first, last;
 	private int stationNumber = 0;
+	private Color col;
 
 	public float quality(boolean onNormalWay) {
 		float t;
@@ -92,8 +94,13 @@ public class Lane {
 		return (first == null || last == null || stationNumber == 0);
 	}
 
-	public Lane(GameMap on) {
+	public Lane(GameMap on, Color c) {
 		this.on = on;
+		col = c;
+	}
+
+	public Color getCol() {
+		return col;
 	}
 
 	public List<Train> getTrains() {

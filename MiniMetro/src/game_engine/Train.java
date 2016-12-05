@@ -8,20 +8,30 @@ import java.util.Observer;
 public class Train implements Observer {
 	private double distance;
 	private Platform to;
-	private boolean inStation;
+	private int exchanging = 0;
 	private Section on;
-	private int velocity;
+	private double velocity = 0.1;
 	private List<Traveler> passengers = new LinkedList<Traveler>();
 	private int capacity = 6;
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
-		if (!inStation) {
+		if (exchanging <= 0) {
 			distance = distance - velocity;
 			if (distance <= 0) {
 				arriveInStation();
 			}
+		} else {
+			exchanging--;
 		}
+	}
+
+	public double getDistance() {
+		return distance;
+	}
+
+	public Platform getTo() {
+		return to;
 	}
 
 	public Section getOn() {
@@ -41,19 +51,17 @@ public class Train implements Observer {
 		return (on != null && on.getTo() == to);
 	}
 
-	public Train(Lane onLane, Clock c) {
-		inStation = false;
+	public Train(Lane onLane) {
 		onLane.getTrains().add(this);
 		to = onLane.getFirst().getPlatform(onLane);
 		distance = 0;
-		velocity = 2;
-		c.addObserver(this);
+		to.getOfLane().getOn().getCl().addObserver(this);
 		onLane.getOn().networkChange();
 	}
 
 	private void arriveInStation() {
 		Platform thisPlat = to;
-		inStation = true;
+		delayLeaving(2);
 		unloadTravelers();
 		changeDest();
 		thisPlat.getOfStation().trainArrival(this);
@@ -67,8 +75,17 @@ public class Train implements Observer {
 		for (Traveler t : temp) {
 			if (!t.isArrivedInStation(to.getOfStation())) {
 				passengers.add(t);
+				delayLeaving(1);
 			}
 		}
+	}
+
+	public List<Traveler> getPassengers() {
+		return passengers;
+	}
+
+	private void delayLeaving(int d) {
+		exchanging += d * 5;
 	}
 
 	private void changeDest() {
@@ -78,7 +95,6 @@ public class Train implements Observer {
 
 	private void leaveStation() {
 		distance = on.getLength();
-		inStation = false;
 	}
 
 	public boolean isFull() {
@@ -87,5 +103,6 @@ public class Train implements Observer {
 
 	public void load(Traveler t) {
 		passengers.add(t);
+		delayLeaving(1);
 	}
 }

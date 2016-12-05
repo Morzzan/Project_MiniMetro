@@ -18,6 +18,7 @@ public class Section {
 	}
 
 	public Section(Platform from, Platform to, Lane ofLane) {
+		from.getOfLane().getOn().getSections().add(this);
 		this.ofLane = ofLane;
 		this.from = from;
 		this.to = to;

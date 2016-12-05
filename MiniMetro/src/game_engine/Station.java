@@ -3,12 +3,17 @@ package game_engine;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
+import java.util.Random;
 
 import math.geom2d.Vector2D;
 
-public class Station {
-	private Shape type;
+public class Station implements Observer {
+	private MyShape type;
 	private Vector2D pos;
+	private GameMap on;
+	private int nextPop = 50;
 	private List<Traveler> waiters = new LinkedList<Traveler>();
 	private List<Platform> platforms = new ArrayList<Platform>();
 
@@ -27,16 +32,19 @@ public class Station {
 		return platforms;
 	}
 
-	public Station(Shape type, Vector2D pos) {
+	public Station(MyShape type, Vector2D pos, GameMap gm) {
 		this.type = type;
 		this.pos = pos;
+		on = gm;
+		on.getCl().addObserver(this);
+
 	}
 
-	public Shape getType() {
+	public MyShape getType() {
 		return type;
 	}
 
-	public void setType(Shape type) {
+	public void setType(MyShape type) {
 		this.type = type;
 	}
 
@@ -85,5 +93,26 @@ public class Station {
 		Platform p = new Platform(this, lane);
 		platforms.add(p);
 		return p;
+	}
+
+	public void update(Observable o, Object arg) {
+		if (nextPop <= 0) {
+			new Traveler(randomType(), this, on);
+			Random r = new Random();
+			nextPop = 100 + r.nextInt(100);
+
+		} else
+			nextPop--;
+	}
+
+	private MyShape randomType() {
+		Random r = new Random();
+		int rdi = r.nextInt(on.getStations().size()) + 1;
+		int i = 0;
+		do {
+			rdi -= on.getNbStationType()[i];
+			i++;
+		} while (rdi > 0);
+		return MyShape.values()[i - 1];
 	}
 }

@@ -1,32 +1,72 @@
 package game_engine;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Observable;
+import java.util.Observer;
+import java.util.Random;
 
 import math.geom2d.Vector2D;
 
-public class GameMap extends Observable {
+public class GameMap extends Observable implements Observer {
 	private List<Station> stations = new LinkedList<Station>();
 	private List<Lane> lanes = new ArrayList<Lane>();
+	private List<Section> sections = new LinkedList<Section>();
+	private Clock cl = new Clock();
 	private int points = 0;
-	private int[] nbStationType = new int[Shape.values().length];
+	private int[] nbStationType = new int[MyShape.values().length];
+	private int mapSize = 10;
 
 	public GameMap() {
-		for (int i = 0; i < 3; i++) {
-			lanes.add(new Lane(this));
-		}
-		addStation(new Station(Shape.Triangle, new Vector2D(0, 0)));
-		addStation(new Station(Shape.Square, new Vector2D(0, 0)));
-		addStation(new Station(Shape.Circle, new Vector2D(0, 0)));
+		lanes.add(new Lane(this, Color.red));
+		lanes.add(new Lane(this, Color.blue));
+		lanes.add(new Lane(this, Color.green));
+		addStation(MyShape.triangle);
+		addStation(MyShape.circle);
+		addStation(MyShape.square);
+		addStation(MyShape.circle);
+	}
+
+	public Clock getCl() {
+		return cl;
+	}
+
+	public List<Section> getSections() {
+		return sections;
+	}
+
+	public int[] getNbStationType() {
+		return nbStationType;
+	}
+
+	public int getMapSize() {
+		return mapSize;
 	}
 
 	public void scorePoint() {
 		points++;
 	}
 
-	public void addStation(Station s) {
+	private Vector2D newStationRandomPos() {
+		Random r = new Random();
+		Vector2D v;
+		boolean good;
+		do {
+			good = true;
+			v = new Vector2D(r.nextInt(mapSize), r.nextInt(mapSize));
+			for (Station s : stations) {
+				if (v.minus(s.getPos()).norm() < 3) {
+					good = false;
+				}
+			}
+		} while (!good);
+		return v;
+	}
+
+	public void addStation(MyShape sh) {
+		Station s = new Station(sh, newStationRandomPos(), this);
 		stations.add(s);
 		nbStationType[s.getType().ordinal()]++;
 	}
@@ -50,5 +90,11 @@ public class GameMap extends Observable {
 
 	public Lane getLane(int index) {
 		return lanes.get(index);
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
+
 	}
 }
