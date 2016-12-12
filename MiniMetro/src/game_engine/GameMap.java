@@ -71,6 +71,11 @@ public class GameMap extends Observable implements Observer {
 		nbStationType[s.getType().ordinal()]++;
 	}
 
+	private MyShape randomStation() {
+
+		return null;
+	}
+
 	public void networkChange() {
 		this.setChanged();
 		notifyObservers();
@@ -94,7 +99,13 @@ public class GameMap extends Observable implements Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
-		// TODO Auto-generated method stub
-
+		if(arg instanceof Integer){
+			int i=(int)arg;
+			i=i%500;
+			if(i==0){
+				// fin de semaine
+				mapSize++;
+			}
+		}
 	}
 }

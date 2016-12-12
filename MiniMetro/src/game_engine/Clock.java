@@ -6,7 +6,7 @@ import java.util.TimerTask;
 
 public class Clock extends Observable {
 	private Timer timer;
-	private Integer count = 0;
+	private Integer count = 1;
 
 	public Clock() {
 		timer = new Timer();
@@ -16,7 +16,7 @@ public class Clock extends Observable {
 			public void run() {
 				count++;
 				setChanged();
-				notifyObservers();
+				notifyObservers(count);
 				System.out.println("Instant " + count);
 			}
 		};
