@@ -61,7 +61,6 @@ public class Train implements Observer {
 
 	private void arriveInStation() {
 		Platform thisPlat = to;
-		delayLeaving(2);
 		unloadTravelers();
 		changeDest();
 		thisPlat.getOfStation().trainArrival(this);

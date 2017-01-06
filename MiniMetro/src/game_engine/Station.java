@@ -16,6 +16,8 @@ public class Station implements Observer {
 	private int nextPop = 50;
 	private List<Traveler> waiters = new LinkedList<Traveler>();
 	private List<Platform> platforms = new ArrayList<Platform>();
+	private int overLoad=0;
+	private static final int CAPACITY=10, DELAY=50;
 
 	public Platform getPlatform(Lane l) {
 		Platform plat = null;
@@ -103,6 +105,15 @@ public class Station implements Observer {
 
 		} else
 			nextPop--;
+		if(waiters.size()>CAPACITY){
+			overLoad++;
+			if (overLoad>=DELAY){
+				on.gameOver();
+			}
+		}
+		else if (overLoad>=0){
+			overLoad--;
+		}
 	}
 
 	private MyShape randomType() {

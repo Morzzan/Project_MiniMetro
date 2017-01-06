@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_0sJ_gLVyEeaYSfDNUutSlA" name="game_engine">
+  <elementImport xmi:id="_0vUoQLVyEeaYSfDNUutSlA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_0vVPULVyEeaYSfDNUutSlA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+  </elementImport>
+  <elementImport xmi:id="_0vVPUbVyEeaYSfDNUutSlA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+  </elementImport>
+  <elementImport xmi:id="_0vVPUrVyEeaYSfDNUutSlA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+  </elementImport>
+  <elementImport xmi:id="_0vV2YLVyEeaYSfDNUutSlA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+  </elementImport>
+  <elementImport xmi:id="_0vV2YbVyEeaYSfDNUutSlA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+  </elementImport>
+  <elementImport xmi:id="_0vV2YrVyEeaYSfDNUutSlA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+  </elementImport>
+  <elementImport xmi:id="_0vWdcLVyEeaYSfDNUutSlA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#short"/>
+  </elementImport>
+  <elementImport xmi:id="_0vWdcbVyEeaYSfDNUutSlA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_0vWdcrVyEeaYSfDNUutSlA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <elementImport xmi:id="_0vWdc7VyEeaYSfDNUutSlA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_0vXEgLVyEeaYSfDNUutSlA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <packageImport xmi:id="_0vN6kLVyEeaYSfDNUutSlA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packageImport xmi:id="_0vSMALVyEeaYSfDNUutSlA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_0vXEgbVyEeaYSfDNUutSlA" name="game_engine">
+    <packagedElement xmi:type="uml:Class" xmi:id="_0ynM0LVyEeaYSfDNUutSlA" name="Traveler" visibility="public">
+      <elementImport xmi:id="_01VJobVyEeaYSfDNUutSlA" importedElement="_01VJoLVyEeaYSfDNUutSlA" visibility="private"/>
+      <elementImport xmi:id="_01W-0LVyEeaYSfDNUutSlA" importedElement="_01WXwLVyEeaYSfDNUutSlA" visibility="private"/>
+      <elementImport xmi:id="_01Xl4bVyEeaYSfDNUutSlA" importedElement="_01Xl4LVyEeaYSfDNUutSlA" visibility="private"/>
+      <elementImport xmi:id="_01YM8LVyEeaYSfDNUutSlA" importedElement="_01SGUbVyEeaYSfDNUutSlA" visibility="private"/>
+      <ownedAttribute xmi:id="_01e6oLVyEeaYSfDNUutSlA" name="on" visibility="private" type="_0zWMoLVyEeaYSfDNUutSlA" association="_1HGPELVyEeaYSfDNUutSlA"/>
+      <ownedAttribute xmi:id="_01tkILVyEeaYSfDNUutSlA" name="type" visibility="private" type="_0y_AQLVyEeaYSfDNUutSlA"/>
+      <ownedAttribute xmi:id="_01zDsLVyEeaYSfDNUutSlA" name="dest" visibility="private" type="_0zjA8LVyEeaYSfDNUutSlA" association="_1HG2ILVyEeaYSfDNUutSlA"/>
+      <ownedAttribute xmi:id="_01044LVyEeaYSfDNUutSlA" name="TRAIN_CHANGE" visibility="private" isLeaf="true" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_011f8LVyEeaYSfDNUutSlA" name="" value="40">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_0138MLVyEeaYSfDNUutSlA" name="MAX_HOPS" visibility="private" isLeaf="true" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_0138MbVyEeaYSfDNUutSlA" name="" value="20">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_015xYLVyEeaYSfDNUutSlA" name="SPEED_TOLERANCE" visibility="private" isLeaf="true" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_015xYbVyEeaYSfDNUutSlA" name="" value="20">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_01_Q8LVyEeaYSfDNUutSlA" name="routes" visibility="private" type="_0yq3MLVyEeaYSfDNUutSlA" isOrdered="true" isUnique="false" association="_1HG2IbVyEeaYSfDNUutSlA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_02C7ULVyEeaYSfDNUutSlA" value="*"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_02CUQLVyEeaYSfDNUutSlA" name="" type="_0yq3MLVyEeaYSfDNUutSlA" value="new LinkedList&lt;Route>()"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_03IgcLVyEeaYSfDNUutSlA" name="Traveler" visibility="public">
+        <ownedParameter xmi:id="_03JHgLVyEeaYSfDNUutSlA" name="type" type="_0y_AQLVyEeaYSfDNUutSlA"/>
+        <ownedParameter xmi:id="_03JHgbVyEeaYSfDNUutSlA" name="in" type="_0zjA8LVyEeaYSfDNUutSlA"/>
+        <ownedParameter xmi:id="_03JHgrVyEeaYSfDNUutSlA" name="jeu" type="_0zWMoLVyEeaYSfDNUutSlA"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_04UzQLVyEeaYSfDNUutSlA" name="setDest" visibility="public">
+        <ownedParameter xmi:id="_04UzQbVyEeaYSfDNUutSlA" name="dest" type="_0zjA8LVyEeaYSfDNUutSlA"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_04ub4LVyEeaYSfDNUutSlA" name="GetOnTo" visibility="public">
+        <ownedParameter xmi:id="_04ub4bVyEeaYSfDNUutSlA" name="t" type="_0zpHkLVyEeaYSfDNUutSlA"/>
+        <ownedParameter xmi:id="_04ub4rVyEeaYSfDNUutSlA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_05DMALVyEeaYSfDNUutSlA" name="findRoute" visibility="public"/>
+      <ownedOperation xmi:id="_05w9sLVyEeaYSfDNUutSlA" name="digRoute" visibility="private">
+        <ownedParameter xmi:id="_05w9sbVyEeaYSfDNUutSlA" name="from" type="_0zjA8LVyEeaYSfDNUutSlA"/>
+        <ownedParameter xmi:id="_05w9srVyEeaYSfDNUutSlA" name="firstDest" type="_0zOQ0LVyEeaYSfDNUutSlA"/>
+        <ownedParameter xmi:id="_05w9s7VyEeaYSfDNUutSlA" name="origin" type="_0zdhYLVyEeaYSfDNUutSlA"/>
+        <ownedParameter xmi:id="_05w9tLVyEeaYSfDNUutSlA" name="bySection" type="_0zdhYLVyEeaYSfDNUutSlA"/>
+        <ownedParameter xmi:id="_05w9tbVyEeaYSfDNUutSlA" name="hops">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_05w9trVyEeaYSfDNUutSlA" name="weightedLength">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_06fWcLVyEeaYSfDNUutSlA" name="exploreThisSection" visibility="private">
+        <ownedParameter xmi:id="_06fWcbVyEeaYSfDNUutSlA" name="from" type="_0zOQ0LVyEeaYSfDNUutSlA"/>
+        <ownedParameter xmi:id="_06fWcrVyEeaYSfDNUutSlA" name="dest" type="_0zOQ0LVyEeaYSfDNUutSlA"/>
+        <ownedParameter xmi:id="_06fWc7VyEeaYSfDNUutSlA" name="origin" type="_0zdhYLVyEeaYSfDNUutSlA"/>
+        <ownedParameter xmi:id="_06fWdLVyEeaYSfDNUutSlA" name="bySection" type="_0zdhYLVyEeaYSfDNUutSlA"/>
+        <ownedParameter xmi:id="_06fWdbVyEeaYSfDNUutSlA" name="hops">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_06fWdrVyEeaYSfDNUutSlA" name="speed">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_06v1ILVyEeaYSfDNUutSlA" name="getType" visibility="public">
+        <ownedParameter xmi:id="_06v1IbVyEeaYSfDNUutSlA" type="_0y_AQLVyEeaYSfDNUutSlA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_07DXILVyEeaYSfDNUutSlA" name="isArrivedInStation" visibility="public">
+        <ownedParameter xmi:id="_07DXIbVyEeaYSfDNUutSlA" name="s" type="_0zjA8LVyEeaYSfDNUutSlA"/>
+        <ownedParameter xmi:id="_07DXIrVyEeaYSfDNUutSlA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_07VD8LVyEeaYSfDNUutSlA" name="delete" visibility="public"/>
+      <ownedOperation xmi:id="_08QRALVyEeaYSfDNUutSlA" name="update" visibility="public">
+        <ownedParameter xmi:id="_08QRAbVyEeaYSfDNUutSlA" name="o" type="_01Xl4LVyEeaYSfDNUutSlA"/>
+        <ownedParameter xmi:id="_08QRArVyEeaYSfDNUutSlA" name="arg" type="_07hRMbVyEeaYSfDNUutSlA"/>
+      </ownedOperation>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_0yq3MLVyEeaYSfDNUutSlA" name="Route" visibility="private">
+        <ownedAttribute xmi:id="_08ik4LVyEeaYSfDNUutSlA" name="dest" visibility="private" type="_0zjA8LVyEeaYSfDNUutSlA"/>
+        <ownedAttribute xmi:id="_08orgLVyEeaYSfDNUutSlA" name="bySection" visibility="private" type="_0zdhYLVyEeaYSfDNUutSlA"/>
+        <ownedAttribute xmi:id="_08p5oLVyEeaYSfDNUutSlA" name="speed" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="_09FXcLVyEeaYSfDNUutSlA" name="Route">
+          <ownedParameter xmi:id="_09F-gLVyEeaYSfDNUutSlA" name="dest" type="_0zjA8LVyEeaYSfDNUutSlA"/>
+          <ownedParameter xmi:id="_09F-gbVyEeaYSfDNUutSlA" name="bySection" type="_0zdhYLVyEeaYSfDNUutSlA"/>
+          <ownedParameter xmi:id="_09F-grVyEeaYSfDNUutSlA" name="speed">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+          </ownedParameter>
+        </ownedOperation>
+      </nestedClassifier>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_0y2dYLVyEeaYSfDNUutSlA" name="Lane" visibility="public">
+      <elementImport xmi:id="_09SLwLVyEeaYSfDNUutSlA" importedElement="_09RksLVyEeaYSfDNUutSlA" visibility="private"/>
+      <elementImport xmi:id="_09SLwbVyEeaYSfDNUutSlA" importedElement="_01WXwLVyEeaYSfDNUutSlA" visibility="private"/>
+      <ownedAttribute xmi:id="_09VPELVyEeaYSfDNUutSlA" name="on" visibility="private" type="_0zWMoLVyEeaYSfDNUutSlA" association="_1HHdMbVyEeaYSfDNUutSlA"/>
+      <ownedAttribute xmi:id="_09aHkLVyEeaYSfDNUutSlA" name="trains" visibility="private" type="_0zpHkLVyEeaYSfDNUutSlA" isOrdered="true" isUnique="false" association="_1HHdMrVyEeaYSfDNUutSlA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_09auoLVyEeaYSfDNUutSlA" value="*"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_09aHkbVyEeaYSfDNUutSlA" name="" type="_0zpHkLVyEeaYSfDNUutSlA" value="new ArrayList&lt;Train>()"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_09dK4LVyEeaYSfDNUutSlA" name="first" visibility="private" type="_0zjA8LVyEeaYSfDNUutSlA" association="_1HIEQLVyEeaYSfDNUutSlA"/>
+      <ownedAttribute xmi:id="_09fnILVyEeaYSfDNUutSlA" name="last" visibility="private" type="_0zjA8LVyEeaYSfDNUutSlA" association="_1HIEQrVyEeaYSfDNUutSlA"/>
+      <ownedAttribute xmi:id="_09g1QLVyEeaYSfDNUutSlA" name="stationNumber" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_09g1QbVyEeaYSfDNUutSlA" name="" value="0">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_09mU0LVyEeaYSfDNUutSlA" name="quality" visibility="public">
+        <ownedParameter xmi:id="_09mU0bVyEeaYSfDNUutSlA" name="onNormalWay">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_09mU0rVyEeaYSfDNUutSlA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_091lYLVyEeaYSfDNUutSlA" name="shorten" visibility="public">
+        <ownedParameter xmi:id="_091lYbVyEeaYSfDNUutSlA" name="s" type="_0zjA8LVyEeaYSfDNUutSlA"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_09_WYLVyEeaYSfDNUutSlA" name="trainsGoingWay" visibility="private">
+        <ownedParameter xmi:id="_09_WYbVyEeaYSfDNUutSlA" name="normal">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_09_WYrVyEeaYSfDNUutSlA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_0-JHYLVyEeaYSfDNUutSlA" name="getFirst" visibility="public">
+        <ownedParameter xmi:id="_0-JHYbVyEeaYSfDNUutSlA" type="_0zjA8LVyEeaYSfDNUutSlA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_0-RqQLVyEeaYSfDNUutSlA" name="getOn" visibility="public">
+        <ownedParameter xmi:id="_0-RqQbVyEeaYSfDNUutSlA" type="_0zWMoLVyEeaYSfDNUutSlA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_0-eekLVyEeaYSfDNUutSlA" name="extendHead" visibility="public">
+        <ownedParameter xmi:id="_0-eekbVyEeaYSfDNUutSlA" name="s" type="_0zjA8LVyEeaYSfDNUutSlA"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_0-maYLVyEeaYSfDNUutSlA" name="isCircular" visibility="public">
+        <ownedParameter xmi:id="_0-maYbVyEeaYSfDNUutSlA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_0-ynoLVyEeaYSfDNUutSlA" name="extendTail" visibility="public">
+        <ownedParameter xmi:id="_0-ynobVyEeaYSfDNUutSlA" name="s" type="_0zjA8LVyEeaYSfDNUutSlA"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_0-6jcLVyEeaYSfDNUutSlA" name="isEmpty" visibility="private">
+        <ownedParameter xmi:id="_0-6jcbVyEeaYSfDNUutSlA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_0_E7gLVyEeaYSfDNUutSlA" name="Lane" visibility="public">
+        <ownedParameter xmi:id="_0_E7gbVyEeaYSfDNUutSlA" name="on" type="_0zWMoLVyEeaYSfDNUutSlA"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_0_NeYLVyEeaYSfDNUutSlA" name="getTrains" visibility="public">
+        <ownedParameter xmi:id="_0_NeYbVyEeaYSfDNUutSlA" type="_01WXwLVyEeaYSfDNUutSlA" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_0y7V4LVyEeaYSfDNUutSlA" name="Launcher" visibility="public">
+      <elementImport xmi:id="_0_S98LVyEeaYSfDNUutSlA" importedElement="_01WXwLVyEeaYSfDNUutSlA" visibility="private"/>
+      <ownedOperation xmi:id="_0_X2cLVyEeaYSfDNUutSlA" name="main" visibility="public" isStatic="true">
+        <ownedParameter xmi:id="_0_X2cbVyEeaYSfDNUutSlA" name="Args">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0_X2crVyEeaYSfDNUutSlA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_0y_AQLVyEeaYSfDNUutSlA" name="Shape" visibility="public">
+      <ownedLiteral xmi:id="_0_cH4LVyEeaYSfDNUutSlA" name="Triangle">
+        <specification xmi:type="uml:LiteralInteger" xmi:id="_0_cu8LVyEeaYSfDNUutSlA"/>
+      </ownedLiteral>
+      <ownedLiteral xmi:id="_0_cu8bVyEeaYSfDNUutSlA" name="Circle">
+        <specification xmi:type="uml:LiteralInteger" xmi:id="_0_dWALVyEeaYSfDNUutSlA"/>
+      </ownedLiteral>
+      <ownedLiteral xmi:id="_0_dWAbVyEeaYSfDNUutSlA" name="Square">
+        <specification xmi:type="uml:LiteralInteger" xmi:id="_0_dWArVyEeaYSfDNUutSlA"/>
+      </ownedLiteral>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_0zIxQLVyEeaYSfDNUutSlA" name="Clock" visibility="public">
+      <elementImport xmi:id="_0_jcoLVyEeaYSfDNUutSlA" importedElement="_01Xl4LVyEeaYSfDNUutSlA" visibility="private"/>
+      <elementImport xmi:id="_0_kqwLVyEeaYSfDNUutSlA" importedElement="_0_kDsLVyEeaYSfDNUutSlA" visibility="private"/>
+      <elementImport xmi:id="_0_lR0bVyEeaYSfDNUutSlA" importedElement="_0_lR0LVyEeaYSfDNUutSlA" visibility="private"/>
+      <generalization xmi:id="_0_i1kLVyEeaYSfDNUutSlA" general="_01Xl4LVyEeaYSfDNUutSlA"/>
+      <ownedAttribute xmi:id="_0_nuELVyEeaYSfDNUutSlA" name="timer" visibility="private" type="_0_kDsLVyEeaYSfDNUutSlA"/>
+      <ownedAttribute xmi:id="_0_o8MLVyEeaYSfDNUutSlA" name="count" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_0_o8MbVyEeaYSfDNUutSlA" name="" value="0">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_0_3lsLVyEeaYSfDNUutSlA" name="Clock" visibility="public"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_0zOQ0LVyEeaYSfDNUutSlA" name="Platform" visibility="public">
+      <ownedAttribute xmi:id="_0_8eMLVyEeaYSfDNUutSlA" name="ofStation" visibility="private" type="_0zjA8LVyEeaYSfDNUutSlA" association="_1HIrULVyEeaYSfDNUutSlA"/>
+      <ownedAttribute xmi:id="_0_-TYLVyEeaYSfDNUutSlA" name="from" visibility="private" type="_0zdhYLVyEeaYSfDNUutSlA" association="_1HJ5crVyEeaYSfDNUutSlA"/>
+      <ownedAttribute xmi:id="_1ABWsLVyEeaYSfDNUutSlA" name="to" visibility="private" type="_0zdhYLVyEeaYSfDNUutSlA" association="_1HIrUrVyEeaYSfDNUutSlA"/>
+      <ownedAttribute xmi:id="_1ADL4LVyEeaYSfDNUutSlA" name="ofLane" visibility="private" type="_0y2dYLVyEeaYSfDNUutSlA" association="_1HJSYLVyEeaYSfDNUutSlA"/>
+      <ownedOperation xmi:id="_1AJSgLVyEeaYSfDNUutSlA" name="Platform" visibility="public">
+        <ownedParameter xmi:id="_1AJSgbVyEeaYSfDNUutSlA" name="ofStation" type="_0zjA8LVyEeaYSfDNUutSlA"/>
+        <ownedParameter xmi:id="_1AJSgrVyEeaYSfDNUutSlA" name="ofLane" type="_0y2dYLVyEeaYSfDNUutSlA"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1AROULVyEeaYSfDNUutSlA" name="nextSection" visibility="public">
+        <ownedParameter xmi:id="_1AR1YLVyEeaYSfDNUutSlA" name="before" type="_0zdhYLVyEeaYSfDNUutSlA"/>
+        <ownedParameter xmi:id="_1AR1YbVyEeaYSfDNUutSlA" type="_0zdhYLVyEeaYSfDNUutSlA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1AZxMLVyEeaYSfDNUutSlA" name="nextStationBy" visibility="public">
+        <ownedParameter xmi:id="_1AZxMbVyEeaYSfDNUutSlA" name="by" type="_0zdhYLVyEeaYSfDNUutSlA"/>
+        <ownedParameter xmi:id="_1AZxMrVyEeaYSfDNUutSlA" type="_0zOQ0LVyEeaYSfDNUutSlA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1AfQwLVyEeaYSfDNUutSlA" name="getOfLane" visibility="public">
+        <ownedParameter xmi:id="_1AfQwbVyEeaYSfDNUutSlA" type="_0y2dYLVyEeaYSfDNUutSlA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1AkwULVyEeaYSfDNUutSlA" name="getFrom" visibility="public">
+        <ownedParameter xmi:id="_1AkwUbVyEeaYSfDNUutSlA" type="_0zdhYLVyEeaYSfDNUutSlA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1AsFELVyEeaYSfDNUutSlA" name="setFrom" visibility="public">
+        <ownedParameter xmi:id="_1AsFEbVyEeaYSfDNUutSlA" name="from" type="_0zdhYLVyEeaYSfDNUutSlA"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1AxkoLVyEeaYSfDNUutSlA" name="getTo" visibility="public">
+        <ownedParameter xmi:id="_1AxkobVyEeaYSfDNUutSlA" type="_0zdhYLVyEeaYSfDNUutSlA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1A6HgLVyEeaYSfDNUutSlA" name="getOfStation" visibility="public">
+        <ownedParameter xmi:id="_1A6HgbVyEeaYSfDNUutSlA" type="_0zjA8LVyEeaYSfDNUutSlA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1BDRcLVyEeaYSfDNUutSlA" name="setTo" visibility="public">
+        <ownedParameter xmi:id="_1BDRcbVyEeaYSfDNUutSlA" name="to" type="_0zdhYLVyEeaYSfDNUutSlA"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_0zWMoLVyEeaYSfDNUutSlA" name="GameMap" visibility="public">
+      <elementImport xmi:id="_1BMbYLVyEeaYSfDNUutSlA" importedElement="_09RksLVyEeaYSfDNUutSlA" visibility="private"/>
+      <elementImport xmi:id="_1BMbYbVyEeaYSfDNUutSlA" importedElement="_01VJoLVyEeaYSfDNUutSlA" visibility="private"/>
+      <elementImport xmi:id="_1BNCcLVyEeaYSfDNUutSlA" importedElement="_01WXwLVyEeaYSfDNUutSlA" visibility="private"/>
+      <elementImport xmi:id="_1BNCcbVyEeaYSfDNUutSlA" importedElement="_01Xl4LVyEeaYSfDNUutSlA" visibility="private"/>
+      <elementImport xmi:id="_1BOQkbVyEeaYSfDNUutSlA" importedElement="_1BOQkLVyEeaYSfDNUutSlA" visibility="private"/>
+      <generalization xmi:id="_1BL0ULVyEeaYSfDNUutSlA" general="_01Xl4LVyEeaYSfDNUutSlA"/>
+      <ownedAttribute xmi:id="_1BSiALVyEeaYSfDNUutSlA" name="stations" visibility="private" type="_0zjA8LVyEeaYSfDNUutSlA" isOrdered="true" isUnique="false" association="_1HJ5cLVyEeaYSfDNUutSlA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1BTJELVyEeaYSfDNUutSlA" value="*"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_1BSiAbVyEeaYSfDNUutSlA" name="" type="_0zjA8LVyEeaYSfDNUutSlA" value="new LinkedList&lt;Station>()"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_1BWzcLVyEeaYSfDNUutSlA" name="lanes" visibility="private" type="_0y2dYLVyEeaYSfDNUutSlA" isOrdered="true" isUnique="false" association="_1HHdMbVyEeaYSfDNUutSlA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1BXagbVyEeaYSfDNUutSlA" value="*"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_1BXagLVyEeaYSfDNUutSlA" name="" type="_0y2dYLVyEeaYSfDNUutSlA" value="new ArrayList&lt;Lane>()"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_1BYooLVyEeaYSfDNUutSlA" name="points" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_1BYoobVyEeaYSfDNUutSlA" name="" value="0">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_1BZ2wLVyEeaYSfDNUutSlA" name="nbStationType" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1BZ2wbVyEeaYSfDNUutSlA" value="*"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_1BZ2wrVyEeaYSfDNUutSlA" name="" value="Shape.values().length">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_1Bc6ELVyEeaYSfDNUutSlA" name="GameMap" visibility="public"/>
+      <ownedOperation xmi:id="_1Bk14LVyEeaYSfDNUutSlA" name="scorePoint" visibility="public"/>
+      <ownedOperation xmi:id="_1BwcELVyEeaYSfDNUutSlA" name="addStation" visibility="public">
+        <ownedParameter xmi:id="_1BwcEbVyEeaYSfDNUutSlA" name="s" type="_0zjA8LVyEeaYSfDNUutSlA"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1B4X4LVyEeaYSfDNUutSlA" name="networkChange" visibility="public"/>
+      <ownedOperation xmi:id="_1CATsLVyEeaYSfDNUutSlA" name="getStations" visibility="public">
+        <ownedParameter xmi:id="_1CATsbVyEeaYSfDNUutSlA" type="_01WXwLVyEeaYSfDNUutSlA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1CGaULVyEeaYSfDNUutSlA" name="getScore" visibility="public">
+        <ownedParameter xmi:id="_1CGaUbVyEeaYSfDNUutSlA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1CNvELVyEeaYSfDNUutSlA" name="getLanes" visibility="public">
+        <ownedParameter xmi:id="_1CNvEbVyEeaYSfDNUutSlA" type="_01WXwLVyEeaYSfDNUutSlA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1CW5ALVyEeaYSfDNUutSlA" name="getLane" visibility="public">
+        <ownedParameter xmi:id="_1CW5AbVyEeaYSfDNUutSlA" name="index">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_1CW5ArVyEeaYSfDNUutSlA" type="_0y2dYLVyEeaYSfDNUutSlA" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_0zdhYLVyEeaYSfDNUutSlA" name="Section" visibility="public">
+      <ownedAttribute xmi:id="_1CbxgLVyEeaYSfDNUutSlA" name="from" visibility="private" type="_0zOQ0LVyEeaYSfDNUutSlA" association="_1HIrUrVyEeaYSfDNUutSlA"/>
+      <ownedAttribute xmi:id="_1CdmsLVyEeaYSfDNUutSlA" name="to" visibility="private" type="_0zOQ0LVyEeaYSfDNUutSlA" association="_1HJ5crVyEeaYSfDNUutSlA"/>
+      <ownedAttribute xmi:id="_1CeNwLVyEeaYSfDNUutSlA" name="length" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_1Cfb4LVyEeaYSfDNUutSlA" name="ofLane" visibility="private" type="_0y2dYLVyEeaYSfDNUutSlA" association="_1HJ5c7VyEeaYSfDNUutSlA"/>
+      <ownedOperation xmi:id="_1CifMLVyEeaYSfDNUutSlA" name="getLength" visibility="public">
+        <ownedParameter xmi:id="_1CifMbVyEeaYSfDNUutSlA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1CmwoLVyEeaYSfDNUutSlA" name="getFrom" visibility="public">
+        <ownedParameter xmi:id="_1CmwobVyEeaYSfDNUutSlA" type="_0zOQ0LVyEeaYSfDNUutSlA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1CrCELVyEeaYSfDNUutSlA" name="getTo" visibility="public">
+        <ownedParameter xmi:id="_1CrCEbVyEeaYSfDNUutSlA" type="_0zOQ0LVyEeaYSfDNUutSlA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1C1aILVyEeaYSfDNUutSlA" name="Section" visibility="public">
+        <ownedParameter xmi:id="_1C1aIbVyEeaYSfDNUutSlA" name="from" type="_0zOQ0LVyEeaYSfDNUutSlA"/>
+        <ownedParameter xmi:id="_1C1aIrVyEeaYSfDNUutSlA" name="to" type="_0zOQ0LVyEeaYSfDNUutSlA"/>
+        <ownedParameter xmi:id="_1C1aI7VyEeaYSfDNUutSlA" name="ofLane" type="_0y2dYLVyEeaYSfDNUutSlA"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1C8H0LVyEeaYSfDNUutSlA" name="weightedLength" visibility="public">
+        <ownedParameter xmi:id="_1C8H0bVyEeaYSfDNUutSlA" name="next" type="_0zOQ0LVyEeaYSfDNUutSlA"/>
+        <ownedParameter xmi:id="_1C8H0rVyEeaYSfDNUutSlA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_0zjA8LVyEeaYSfDNUutSlA" name="Station" visibility="public">
+      <elementImport xmi:id="_1C_yMLVyEeaYSfDNUutSlA" importedElement="_09RksLVyEeaYSfDNUutSlA" visibility="private"/>
+      <elementImport xmi:id="_1DAZQLVyEeaYSfDNUutSlA" importedElement="_01VJoLVyEeaYSfDNUutSlA" visibility="private"/>
+      <elementImport xmi:id="_1DAZQbVyEeaYSfDNUutSlA" importedElement="_01WXwLVyEeaYSfDNUutSlA" visibility="private"/>
+      <elementImport xmi:id="_1DAZQrVyEeaYSfDNUutSlA" importedElement="_1BOQkLVyEeaYSfDNUutSlA" visibility="private"/>
+      <ownedAttribute xmi:id="_1DC1gLVyEeaYSfDNUutSlA" name="type" visibility="private" type="_0y_AQLVyEeaYSfDNUutSlA"/>
+      <ownedAttribute xmi:id="_1DFRwLVyEeaYSfDNUutSlA" name="pos" visibility="private" type="_1BOQkLVyEeaYSfDNUutSlA"/>
+      <ownedAttribute xmi:id="_1DKKQLVyEeaYSfDNUutSlA" name="waiters" visibility="private" type="_0ynM0LVyEeaYSfDNUutSlA" isOrdered="true" isUnique="false" association="_1HG2ILVyEeaYSfDNUutSlA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1DKxUbVyEeaYSfDNUutSlA" value="*"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_1DKxULVyEeaYSfDNUutSlA" name="" type="_0ynM0LVyEeaYSfDNUutSlA" value="new LinkedList&lt;Traveler>()"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_1DPCwLVyEeaYSfDNUutSlA" name="platforms" visibility="private" type="_0zOQ0LVyEeaYSfDNUutSlA" isOrdered="true" isUnique="false" association="_1HIrULVyEeaYSfDNUutSlA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1DPp0LVyEeaYSfDNUutSlA" value="*"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_1DPCwbVyEeaYSfDNUutSlA" name="" type="_0zOQ0LVyEeaYSfDNUutSlA" value="new ArrayList&lt;Platform>()"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_1DYzwLVyEeaYSfDNUutSlA" name="getPlatform" visibility="public">
+        <ownedParameter xmi:id="_1DYzwbVyEeaYSfDNUutSlA" name="l" type="_0y2dYLVyEeaYSfDNUutSlA"/>
+        <ownedParameter xmi:id="_1DYzwrVyEeaYSfDNUutSlA" type="_0zOQ0LVyEeaYSfDNUutSlA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1Djy4LVyEeaYSfDNUutSlA" name="getPlatforms" visibility="public">
+        <ownedParameter xmi:id="_1Djy4bVyEeaYSfDNUutSlA" type="_01WXwLVyEeaYSfDNUutSlA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1DzDcLVyEeaYSfDNUutSlA" name="Station" visibility="public">
+        <ownedParameter xmi:id="_1DzDcbVyEeaYSfDNUutSlA" name="type" type="_0y_AQLVyEeaYSfDNUutSlA"/>
+        <ownedParameter xmi:id="_1DzDcrVyEeaYSfDNUutSlA" name="pos" type="_1BOQkLVyEeaYSfDNUutSlA"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1D80cLVyEeaYSfDNUutSlA" name="getType" visibility="public">
+        <ownedParameter xmi:id="_1D80cbVyEeaYSfDNUutSlA" type="_0y_AQLVyEeaYSfDNUutSlA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1EMFALVyEeaYSfDNUutSlA" name="setType" visibility="public">
+        <ownedParameter xmi:id="_1EMFAbVyEeaYSfDNUutSlA" name="type" type="_0y_AQLVyEeaYSfDNUutSlA"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1EVO8LVyEeaYSfDNUutSlA" name="getPos" visibility="public">
+        <ownedParameter xmi:id="_1EVO8bVyEeaYSfDNUutSlA" type="_1BOQkLVyEeaYSfDNUutSlA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1EeY4LVyEeaYSfDNUutSlA" name="getWaiters" visibility="public">
+        <ownedParameter xmi:id="_1EeY4bVyEeaYSfDNUutSlA" type="_01WXwLVyEeaYSfDNUutSlA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1Ep_ELVyEeaYSfDNUutSlA" name="setPos" visibility="public">
+        <ownedParameter xmi:id="_1Ep_EbVyEeaYSfDNUutSlA" name="pos" type="_1BOQkLVyEeaYSfDNUutSlA"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1E0-MLVyEeaYSfDNUutSlA" name="getDistance" visibility="public">
+        <ownedParameter xmi:id="_1E0-MbVyEeaYSfDNUutSlA" name="s2" type="_0zjA8LVyEeaYSfDNUutSlA"/>
+        <ownedParameter xmi:id="_1E0-MrVyEeaYSfDNUutSlA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1FBLcLVyEeaYSfDNUutSlA" name="trainArrival" visibility="public">
+        <ownedParameter xmi:id="_1FBLcbVyEeaYSfDNUutSlA" name="train" type="_0zpHkLVyEeaYSfDNUutSlA"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1FMxoLVyEeaYSfDNUutSlA" name="haveWait" visibility="public">
+        <ownedParameter xmi:id="_1FMxobVyEeaYSfDNUutSlA" name="t" type="_0ynM0LVyEeaYSfDNUutSlA"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1FWioLVyEeaYSfDNUutSlA" name="createPlatform" visibility="public">
+        <ownedParameter xmi:id="_1FWiobVyEeaYSfDNUutSlA" name="lane" type="_0y2dYLVyEeaYSfDNUutSlA"/>
+        <ownedParameter xmi:id="_1FWiorVyEeaYSfDNUutSlA" type="_0zOQ0LVyEeaYSfDNUutSlA" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_0zpHkLVyEeaYSfDNUutSlA" name="Train" visibility="public">
+      <elementImport xmi:id="_1FbbILVyEeaYSfDNUutSlA" importedElement="_01VJoLVyEeaYSfDNUutSlA" visibility="private"/>
+      <elementImport xmi:id="_1FbbIbVyEeaYSfDNUutSlA" importedElement="_01WXwLVyEeaYSfDNUutSlA" visibility="private"/>
+      <elementImport xmi:id="_1FcCMLVyEeaYSfDNUutSlA" importedElement="_01Xl4LVyEeaYSfDNUutSlA" visibility="private"/>
+      <elementImport xmi:id="_1FcCMbVyEeaYSfDNUutSlA" importedElement="_01SGUbVyEeaYSfDNUutSlA" visibility="private"/>
+      <ownedAttribute xmi:id="_1FcpQLVyEeaYSfDNUutSlA" name="distance" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_1FeecLVyEeaYSfDNUutSlA" name="to" visibility="private" type="_0zOQ0LVyEeaYSfDNUutSlA" association="_1HKggLVyEeaYSfDNUutSlA"/>
+      <ownedAttribute xmi:id="_1FfskLVyEeaYSfDNUutSlA" name="inStation" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_1FhhwLVyEeaYSfDNUutSlA" name="on" visibility="private" type="_0zdhYLVyEeaYSfDNUutSlA" association="_1HKggrVyEeaYSfDNUutSlA"/>
+      <ownedAttribute xmi:id="_1FiI0LVyEeaYSfDNUutSlA" name="velocity" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_1FlMILVyEeaYSfDNUutSlA" name="passengers" visibility="private" type="_0ynM0LVyEeaYSfDNUutSlA" isOrdered="true" isUnique="false" association="_1HLHkLVyEeaYSfDNUutSlA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1FlMIrVyEeaYSfDNUutSlA" value="*"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_1FlMIbVyEeaYSfDNUutSlA" name="" type="_0ynM0LVyEeaYSfDNUutSlA" value="new LinkedList&lt;Traveler>()"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_1FmaQLVyEeaYSfDNUutSlA" name="capacity" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_1FmaQbVyEeaYSfDNUutSlA" name="" value="6">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_1FxZYLVyEeaYSfDNUutSlA" name="update" visibility="public">
+        <ownedParameter xmi:id="_1FxZYbVyEeaYSfDNUutSlA" name="arg0" type="_01Xl4LVyEeaYSfDNUutSlA"/>
+        <ownedParameter xmi:id="_1FxZYrVyEeaYSfDNUutSlA" name="arg1" type="_07hRMbVyEeaYSfDNUutSlA"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1F4uILVyEeaYSfDNUutSlA" name="getOn" visibility="public">
+        <ownedParameter xmi:id="_1F4uIbVyEeaYSfDNUutSlA" type="_0zdhYLVyEeaYSfDNUutSlA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1F-NsLVyEeaYSfDNUutSlA" name="isGoingNormalWay" visibility="public">
+        <ownedParameter xmi:id="_1F-NsbVyEeaYSfDNUutSlA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1GE7YLVyEeaYSfDNUutSlA" name="fromHeadToTail" visibility="public">
+        <ownedParameter xmi:id="_1GE7YbVyEeaYSfDNUutSlA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1GRvsLVyEeaYSfDNUutSlA" name="Train" visibility="public">
+        <ownedParameter xmi:id="_1GRvsbVyEeaYSfDNUutSlA" name="onLane" type="_0y2dYLVyEeaYSfDNUutSlA"/>
+        <ownedParameter xmi:id="_1GRvsrVyEeaYSfDNUutSlA" name="c" type="_0zIxQLVyEeaYSfDNUutSlA"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1GaSkLVyEeaYSfDNUutSlA" name="arriveInStation" visibility="private"/>
+      <ownedOperation xmi:id="_1GiOYLVyEeaYSfDNUutSlA" name="unloadTravelers" visibility="private"/>
+      <ownedOperation xmi:id="_1GpjILVyEeaYSfDNUutSlA" name="changeDest" visibility="private"/>
+      <ownedOperation xmi:id="_1Gw34LVyEeaYSfDNUutSlA" name="leaveStation" visibility="private"/>
+      <ownedOperation xmi:id="_1G2-gLVyEeaYSfDNUutSlA" name="isFull" visibility="public">
+        <ownedParameter xmi:id="_1G2-gbVyEeaYSfDNUutSlA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1HCksLVyEeaYSfDNUutSlA" name="load" visibility="public">
+        <ownedParameter xmi:id="_1HCksbVyEeaYSfDNUutSlA" name="t" type="_0ynM0LVyEeaYSfDNUutSlA"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_1HGPELVyEeaYSfDNUutSlA" name="on_target" memberEnd="_01e6oLVyEeaYSfDNUutSlA _1HGPEbVyEeaYSfDNUutSlA">
+      <ownedEnd xmi:id="_1HGPEbVyEeaYSfDNUutSlA" name="target" type="_0ynM0LVyEeaYSfDNUutSlA" association="_1HGPELVyEeaYSfDNUutSlA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_1HG2ILVyEeaYSfDNUutSlA" name="dest_waiters" memberEnd="_01zDsLVyEeaYSfDNUutSlA _1DKKQLVyEeaYSfDNUutSlA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_1HG2IbVyEeaYSfDNUutSlA" name="routes_target" memberEnd="_01_Q8LVyEeaYSfDNUutSlA _1HHdMLVyEeaYSfDNUutSlA">
+      <ownedEnd xmi:id="_1HHdMLVyEeaYSfDNUutSlA" name="target" type="_0ynM0LVyEeaYSfDNUutSlA" association="_1HG2IbVyEeaYSfDNUutSlA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_1HHdMbVyEeaYSfDNUutSlA" name="on_lanes" memberEnd="_09VPELVyEeaYSfDNUutSlA _1BWzcLVyEeaYSfDNUutSlA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_1HHdMrVyEeaYSfDNUutSlA" name="trains_target" memberEnd="_09aHkLVyEeaYSfDNUutSlA _1HHdM7VyEeaYSfDNUutSlA">
+      <ownedEnd xmi:id="_1HHdM7VyEeaYSfDNUutSlA" name="target" type="_0y2dYLVyEeaYSfDNUutSlA" association="_1HHdMrVyEeaYSfDNUutSlA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_1HIEQLVyEeaYSfDNUutSlA" name="first_target" memberEnd="_09dK4LVyEeaYSfDNUutSlA _1HIEQbVyEeaYSfDNUutSlA">
+      <ownedEnd xmi:id="_1HIEQbVyEeaYSfDNUutSlA" name="target" type="_0y2dYLVyEeaYSfDNUutSlA" association="_1HIEQLVyEeaYSfDNUutSlA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_1HIEQrVyEeaYSfDNUutSlA" name="last_target" memberEnd="_09fnILVyEeaYSfDNUutSlA _1HIEQ7VyEeaYSfDNUutSlA">
+      <ownedEnd xmi:id="_1HIEQ7VyEeaYSfDNUutSlA" name="target" type="_0y2dYLVyEeaYSfDNUutSlA" association="_1HIEQrVyEeaYSfDNUutSlA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_1HIrULVyEeaYSfDNUutSlA" name="ofStation_platforms" memberEnd="_0_8eMLVyEeaYSfDNUutSlA _1DPCwLVyEeaYSfDNUutSlA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_1HIrUbVyEeaYSfDNUutSlA" name="from_from"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_1HIrUrVyEeaYSfDNUutSlA" name="to_from" memberEnd="_1ABWsLVyEeaYSfDNUutSlA _1CbxgLVyEeaYSfDNUutSlA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_1HJSYLVyEeaYSfDNUutSlA" name="ofLane_target" memberEnd="_1ADL4LVyEeaYSfDNUutSlA _1HJSYbVyEeaYSfDNUutSlA">
+      <ownedEnd xmi:id="_1HJSYbVyEeaYSfDNUutSlA" name="target" type="_0zOQ0LVyEeaYSfDNUutSlA" association="_1HJSYLVyEeaYSfDNUutSlA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_1HJ5cLVyEeaYSfDNUutSlA" name="stations_target" memberEnd="_1BSiALVyEeaYSfDNUutSlA _1HJ5cbVyEeaYSfDNUutSlA">
+      <ownedEnd xmi:id="_1HJ5cbVyEeaYSfDNUutSlA" name="target" type="_0zWMoLVyEeaYSfDNUutSlA" association="_1HJ5cLVyEeaYSfDNUutSlA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_1HJ5crVyEeaYSfDNUutSlA" name="to_from" memberEnd="_1CdmsLVyEeaYSfDNUutSlA _0_-TYLVyEeaYSfDNUutSlA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_1HJ5c7VyEeaYSfDNUutSlA" name="ofLane_target" memberEnd="_1Cfb4LVyEeaYSfDNUutSlA _1HJ5dLVyEeaYSfDNUutSlA">
+      <ownedEnd xmi:id="_1HJ5dLVyEeaYSfDNUutSlA" name="target" type="_0zdhYLVyEeaYSfDNUutSlA" association="_1HJ5c7VyEeaYSfDNUutSlA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_1HKggLVyEeaYSfDNUutSlA" name="to_target" memberEnd="_1FeecLVyEeaYSfDNUutSlA _1HKggbVyEeaYSfDNUutSlA">
+      <ownedEnd xmi:id="_1HKggbVyEeaYSfDNUutSlA" name="target" type="_0zpHkLVyEeaYSfDNUutSlA" association="_1HKggLVyEeaYSfDNUutSlA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_1HKggrVyEeaYSfDNUutSlA" name="on_target" memberEnd="_1FhhwLVyEeaYSfDNUutSlA _1HKgg7VyEeaYSfDNUutSlA">
+      <ownedEnd xmi:id="_1HKgg7VyEeaYSfDNUutSlA" name="target" type="_0zpHkLVyEeaYSfDNUutSlA" association="_1HKggrVyEeaYSfDNUutSlA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_1HLHkLVyEeaYSfDNUutSlA" name="passengers_target" memberEnd="_1FlMILVyEeaYSfDNUutSlA _1HLHkbVyEeaYSfDNUutSlA">
+      <ownedEnd xmi:id="_1HLHkbVyEeaYSfDNUutSlA" name="target" type="_0zpHkLVyEeaYSfDNUutSlA" association="_1HLHkLVyEeaYSfDNUutSlA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_1HPZALVyEeaYSfDNUutSlA" name="game_engine_util" client="_0vXEgbVyEeaYSfDNUutSlA" supplier="_01SGULVyEeaYSfDNUutSlA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_1HQAELVyEeaYSfDNUutSlA" name="game_engine_geom2d" client="_0vXEgbVyEeaYSfDNUutSlA" supplier="_1BNpgbVyEeaYSfDNUutSlA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_01RfQLVyEeaYSfDNUutSlA" name="java">
+    <packagedElement xmi:type="uml:Package" xmi:id="_01SGULVyEeaYSfDNUutSlA" name="util">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_01SGUbVyEeaYSfDNUutSlA" name="Observer"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_01VJoLVyEeaYSfDNUutSlA" name="LinkedList"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_01WXwLVyEeaYSfDNUutSlA" name="List"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_01Xl4LVyEeaYSfDNUutSlA" name="Observable"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_09RksLVyEeaYSfDNUutSlA" name="ArrayList"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_0_kDsLVyEeaYSfDNUutSlA" name="Timer"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_0_lR0LVyEeaYSfDNUutSlA" name="TimerTask"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_07hRMLVyEeaYSfDNUutSlA" name="lang">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_07hRMbVyEeaYSfDNUutSlA" name="Object"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_1BNpgLVyEeaYSfDNUutSlA" name="math">
+    <packagedElement xmi:type="uml:Package" xmi:id="_1BNpgbVyEeaYSfDNUutSlA" name="geom2d">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_1BOQkLVyEeaYSfDNUutSlA" name="Vector2D"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

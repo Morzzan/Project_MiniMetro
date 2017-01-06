@@ -9,7 +9,7 @@ public class Traveler implements Observer {
 	private GameMap on;
 	private MyShape type;
 	private Station dest;
-	private static final int TRAIN_CHANGE = 40, MAX_HOPS = 20, SPEED_TOLERANCE = 20;
+	private static final int TRAIN_CHANGE = 40, MAX_HOPS = 20, SPEED_TOLERANCE = 90;
 	private List<Route> routes = new LinkedList<Route>();
 
 	private class Route {
