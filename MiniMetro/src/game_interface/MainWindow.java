@@ -14,20 +14,19 @@ import javax.swing.JPanel;
 import game_engine.GameMap;
 import game_engine.Train;
 
-public class MainWindow extends JFrame{
+public class MainWindow extends JFrame implements Runnable{
 	private static final long serialVersionUID = 1L;
 	private GameMap gm = new GameMap();
 	private JButton play,pause,rush;
 	private JPanel btns=new JPanel();
+	private MainPanel mPan=new MainPanel(gm);
 
 	public MainWindow() {
 		this.setTitle("Mini Metro");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		this.setExtendedState(Frame.MAXIMIZED_BOTH);
-		this.setVisible(true);
 		btns.setLayout(new BoxLayout(btns, BoxLayout.Y_AXIS));
-		JPanel mPan = new MainPanel(gm);
 		Container pan = getContentPane();
 		pan.add(mPan,BorderLayout.CENTER);
 		pan.add(btns,BorderLayout.EAST);
@@ -91,5 +90,10 @@ public class MainWindow extends JFrame{
 		btns.add(pause);
 		btns.add(play);
 		btns.add(rush);
+	}
+
+	public void run() {
+		this.setVisible(true);
+		mPan.go();
 	}
 }

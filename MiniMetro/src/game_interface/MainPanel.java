@@ -23,7 +23,7 @@ import game_engine.Train;
 import game_engine.Traveler;
 import math.geom2d.Vector2D;
 
-public class MainPanel extends JPanel implements Observer {
+public class MainPanel extends JPanel{
 	private static final long serialVersionUID = 1L;
 	private GameMap gm;
 	private int boxSize, boxHeight, boxWidth;
@@ -31,7 +31,6 @@ public class MainPanel extends JPanel implements Observer {
 
 	public MainPanel(GameMap gm) {
 		this.gm = gm;
-		gm.getCl().addObserver(this);
 		setBackground(Color.white);
 	}
 
@@ -128,8 +127,14 @@ public class MainPanel extends JPanel implements Observer {
 		}
 	}
 
-	@Override
-	public void update(Observable o, Object arg) {
-		repaint();
+	public void go() {
+		for(;;){
+			repaint();
+			try {
+				Thread.sleep(20);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }
