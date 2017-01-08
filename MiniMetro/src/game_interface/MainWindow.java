@@ -39,17 +39,17 @@ public class MainWindow extends JFrame implements Runnable{
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					gm.getLane(j).extendTail(gm.getStations().get(gm.getStations().size()-1));
+					if(mPan.getChoice()!=null){
+						gm.getLane(j).extendTail(mPan.getChoice());
+					}
 				}
 			});
 		}
 		gm.getLane(0).extendTail(gm.getStations().get(0));
 		gm.getLane(0).extendTail(gm.getStations().get(1));
-		gm.getLane(0).extendTail(gm.getStations().get(2));
-		gm.getLane(1).extendTail(gm.getStations().get(2));
-		gm.getLane(1).extendTail(gm.getStations().get(0));
+
 		new Train(gm.getLane(0));
-		new Train(gm.getLane(1));
+
 	}
 
 	private void configureTimeGestion() {
@@ -94,6 +94,14 @@ public class MainWindow extends JFrame implements Runnable{
 
 	public void run() {
 		this.setVisible(true);
-		mPan.go();
+		for(;;){
+			repaint();
+			try {
+				Thread.sleep(25);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 }

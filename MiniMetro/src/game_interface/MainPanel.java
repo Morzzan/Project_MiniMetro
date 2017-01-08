@@ -4,6 +4,8 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.geom.Line2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -28,10 +30,54 @@ public class MainPanel extends JPanel{
 	private GameMap gm;
 	private int boxSize, boxHeight, boxWidth;
 	private Vector2D center;
+	private Station choice;
 
 	public MainPanel(GameMap gm) {
 		this.gm = gm;
 		setBackground(Color.white);
+		addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				double x=(e.getX()-getWidth()/2)/boxWidth;
+				double y=(e.getY()-getHeight()/2)/boxHeight;
+				Vector2D v= new Vector2D(x, y);
+				for(Station s : gm.getStations()){
+					Vector2D w=v.minus(s.getPos());
+					if(w.norm()<=2){
+						choice=s;
+					}
+				}
+			}
+		});
+	}
+
+	public Station getChoice() {
+		return choice;
 	}
 
 	private void paintTrains(Graphics g) {
@@ -72,7 +118,7 @@ public class MainPanel extends JPanel{
 
 	private void paintHUDs(Graphics g) {
 		g.setColor(Color.black);
-		g.drawString("Points : " + gm.getScore(), 10, 20);
+		g.drawString("Points : " + gm.getScore()+ choice, 10, 20);
 	}
 
 	private void paintNetwork(Graphics g) {
@@ -127,14 +173,5 @@ public class MainPanel extends JPanel{
 		}
 	}
 
-	public void go() {
-		for(;;){
-			repaint();
-			try {
-				Thread.sleep(20);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-	}
+	
 }

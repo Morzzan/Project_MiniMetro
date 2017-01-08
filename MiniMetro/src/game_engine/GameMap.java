@@ -26,6 +26,8 @@ public class GameMap extends Observable implements Observer{
 	}
 
 	public GameMap() {
+		Thread t = new Thread(cl);
+		t.start();
 		lanes.add(new Lane(this, Color.red));
 		lanes.add(new Lane(this, Color.blue));
 		lanes.add(new Lane(this, Color.green));
