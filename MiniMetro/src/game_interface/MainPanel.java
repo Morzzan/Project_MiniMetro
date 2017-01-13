@@ -118,7 +118,7 @@ public class MainPanel extends JPanel{
 
 	private void paintHUDs(Graphics g) {
 		g.setColor(Color.black);
-		g.drawString("Points : " + gm.getScore()+ choice, 10, 20);
+		g.drawString("Points : " + gm.getScore(), 10, 20);
 	}
 
 	private void paintNetwork(Graphics g) {

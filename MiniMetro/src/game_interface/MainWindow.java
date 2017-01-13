@@ -47,7 +47,9 @@ public class MainWindow extends JFrame implements Runnable{
 		}
 		gm.getLane(0).extendTail(gm.getStations().get(0));
 		gm.getLane(0).extendTail(gm.getStations().get(1));
-
+		gm.getLane(1).extendTail(gm.getStations().get(2));
+		gm.getLane(1).extendTail(gm.getStations().get(1));
+		new Train(gm.getLane(1));
 		new Train(gm.getLane(0));
 
 	}
